@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "avion";
+    src: url(font/PLANET__.TTF);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "avion", Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(img/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    margin: 50px;
+    text-align: center;
+    display: block;
+    font-size: 40px;
+}
+
+.fotos{
+    width: 100%;
+    margin: 0 auto;
+}
+.container::after{
+    /* Para que el contenedor muestre elementos aunque estos sean flotantes */
+    content: "";
+    display: block;
+    height: 0px;
+    clear: both;
+}
+
+.container{
+    width: 90%;
+    margin: 0 9%;
+}
+
+/* Estructura cada componente de la galeria */
+.container div{
+    width: 28%;
+    height: auto;
+    display: inline;
+    float: left;
+    margin: 0% 3% 0% 0%;
+    padding: 0px;
+}
+
+.container div img{
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 10px #333;
+    border: 5px solid #333;
+}
+
+/* Estructura de la descripción, por defecto no se muestre */
+.container div img~span{
+    width: 100%;
+    display: block;
+    opacity: 0;
+    margin: 0;
+    padding: 2px 5px;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 0 10px #666;
+    text-align: center;
+}
+
+.container div img:hover+span{
+    opacity: 1;
+}
+
+.container:hover div{
+    opacity: 0.7;
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+.container:hover div:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+
